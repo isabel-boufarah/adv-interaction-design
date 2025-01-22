@@ -1,0 +1,170 @@
+:root {
+    --green: #6DE84B;
+    --pink: #FB4E93;
+    --orange: #FFAB37;
+    --blue: #49D1FE;
+    --yellow: #f1f43c;
+}
+
+body {
+    font-family: "Inter", serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+
+    > div {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.div2-active {
+    transform: rotate(45deg);
+    transition: all 1s;
+}
+
+.div3 {
+    background: linear-gradient(to right, white 50%, var(--orange) 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+
+.div3-active {
+    background-position: 10% 50%;
+}
+
+.div4 {
+    background-color: var(--blue);
+}
+
+.div4-active {
+    background-color: white;
+}
+
+.div6 {
+    background-color: var(--orange);
+}
+
+.div6-active {
+    box-shadow: 0px 0px 20px  10px var(--yellow);
+    transition: .5s;
+}
+
+.div7 {
+    background: linear-gradient(to right, white, var(--blue) 60%);
+    background-size: 200%;
+    background-position: 100%;
+    transition: background-position 0.5s ease-in;
+}
+
+.div7-active {
+    background-position: 0%;
+}
+
+.div13:hover {
+    cursor: wait;
+}
+
+@keyframes spin {
+    50% {transform: rotate(180deg)}
+    100% {transform: rotate(360deg)}
+}
+
+.div14:hover {
+    animation: spin 1s;
+    animation-iteration-count: 2;
+}
+
+@keyframes flash {
+    50% {background-color: #0d4d62}
+    100% {background-color: var(--blue)}
+}
+
+.div15:hover {
+    animation: flash .5s;
+    animation-iteration-count: 3;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.5);}
+    100% {transform: scale(1);}
+}
+
+.div17:hover {
+    animation: pulse 2s infinite;
+}
+
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+.div19 p{
+    overflow: hidden;
+    display: none;
+}
+
+.div19-active p {
+    display:block;
+    border-right: .15em solid white;
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .10em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+  
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+.mousedown {
+    background-color: #c18025 !important;
+    box-shadow: inset 0 0 5px 2px rgb(209, 209, 209)
+}
+
+@keyframes loading {
+    from {opacity: 0;}
+    to {opacity: 1}
+}
+
+.div29:hover {
+    div:first-of-type {
+        animation: loading 1s infinite;
+    }
+
+    div:nth-of-type(2) {
+        animation: loading 1s infinite;
+        animation-delay: 250ms;
+    }
+
+    div:last-of-type {
+        animation: loading 1s infinite;
+        animation-delay: 500ms;
+    }
+}
+
+@keyframes rotateUp {
+    from { transform: rotate(0deg);}
+    50% {transform:  rotate(45deg)}
+    to{ transform: rotate(90deg)}
+}
+
+.div35-active {
+    animation: rotateUp 3s;
+    animation-iteration-count: 3;
+}

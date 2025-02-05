@@ -91,7 +91,7 @@ function adjacentSpots(id) {
     let letterArray = HEnum.slice()
 
     let threshold = letterArray.flat().filter(e => e == 1).length * 0.05
-    while (letterArray.flat().filter(e => e == 1).length > 0) {
+    if (letterArray.flat().filter(e => e == 1).length > 0) {
     //for(let x = 0; x < 40; x++) {
         console.log('in while')
         // select a point, more prob it is a 1 than a 2
@@ -151,7 +151,14 @@ function markSurroundingPoints(row, col, array, index) {
     return array;
 }
 
-//adjacentSpots('test3')
-$('#test3').mouseover(() => {
-    adjacentSpots('test3')
-})
+const element = document.getElementById("test3"); // Replace with your element's ID
+let intervalId;
+
+element.addEventListener("mouseenter", () => {
+    // maybe here copy the letter array and pass it to
+    intervalId = setInterval(adjacentSpots, 100, 'test3'); // Calls function every 100ms
+});
+
+element.addEventListener("mouseleave", () => {
+    clearInterval(intervalId); // Stops calling the function
+});

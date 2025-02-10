@@ -1,5 +1,7 @@
 body {
     margin: 50px;
+    /* background-color: rgb(11, 138, 11); */
+    background-color: #518B4E;
 }
 
 @keyframes grow {
@@ -9,4 +11,17 @@ body {
 
 .grow {
     animation: grow 0.5s ease-out 1;
+}
+
+#alphabet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+
+    div {
+        position: relative; 
+        width: 160px; 
+        height: 208px;
+    }
 }

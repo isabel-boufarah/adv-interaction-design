@@ -1,78 +1,3 @@
-//for each item in array, if its true, decide to draw with 25% probability
-function decideForEachTrue(id) {
-    for(let i = 0; i < H.length; i++) {
-        for (let j = 0; j < H[0].length; j++){
-            if(H[i][j]){
-                if(Math.random() < 0.25) {
-                    let size = Math.floor(Math.random() * 3);
-                    let width;
-                    if(size == 0) {
-                        width = '50px'
-                    } else if(size == 1){
-                        width = '100px'
-                    } else {
-                        width = '130px'
-                    }
-                    let comp = Math.floor(Math.random() * components.length)
-                    let svg = components[comp].clone().css({
-                        'position':'absolute',
-                        'top':`${30*i}px`,
-                        'left':`${30*j}px`,
-                        'width':`${components[comp].attr('width') * 0.4}px`,
-                        'height':`${components[comp].attr('height') * 0.4}px`
-                    })
-                    $(`#${id}`).append(svg)
-                }
-                
-            }  
-        }
-    }
-}
-
-function selectFromSet(id) {
-
-}
-
-function decideForEachTrueIncProb(id) {
-    let totalTrue = H.filter(e => e).length
-    for(let i = 0; i < H.length; i++) {
-        for (let j = 0; j < H[0].length; j++){
-            if(H[i][j]){
-                if(Math.random() < 1/totalTrue) {
-                    totalTrue--;
-                    let size = Math.floor(Math.random() * 3);
-                    let width;
-                    if(size == 0) {
-                        width = '50px'
-                    } else if(size == 1){
-                        width = '100px'
-                    } else {
-                        width = '130px'
-                    }
-                    let comp = Math.floor(Math.random() * components.length)
-                    let svg = components[comp].clone().css({
-                        'position':'absolute',
-                        'top':`${30*i}px`,
-                        'left':`${30*j}px`,
-                        'width':`${components[comp].attr('width') * 0.4}px`,
-                        'height':`${components[comp].attr('height') * 0.4}px`
-                    })
-                    $(`#${id}`).append(svg)
-                }
-                
-            }  
-        }
-    }
-}
-
-function dontSelectDirectNeighbors(id) {
-
-}
-
-// decideForEachTrue('test')
-// decideForEachTrueIncProb('test2')
-
-
 // if an index is chosen, don't choose direct neighbors?
 // decide on a subset number, if an index is chosen, don't choose itself or direct neighbors
 
@@ -87,78 +12,113 @@ function brisdon(id) {
 }
 
 // if a flower is touching another spot, make that spot less liekly to have a flower
-function adjacentSpots(id) {
-    let letterArray = HEnum.slice()
+function adjacentSpots(id, letter) {
+    console.log('call adjacent spots')
+    console.log(window.letterData[letter].oneCount)
+    if (window.letterData[letter].oneCount > 0) {
 
-    let threshold = letterArray.flat().filter(e => e == 1).length * 0.05
-    if (letterArray.flat().filter(e => e == 1).length > 0) {
-    //for(let x = 0; x < 40; x++) {
-        console.log('in while')
-        // select a point, more prob it is a 1 than a 2
-        let row = Math.floor(Math.random() * letterArray.length)
-        let col = Math.floor(Math.random() * letterArray[0].length)
+        // select a point for placement
+        let row;
+        let col;
+        do {
+            row = Math.floor(Math.random() * window.letterData[letter].array.length)
+            col = Math.floor(Math.random() * window.letterData[letter].array[0].length)
+        } while(!keepPoint(row, col, letter))
 
-        while(!keepPoint(row, col, letterArray)) {
-            row = Math.floor(Math.random() * letterArray.length)
-            col = Math.floor(Math.random() * letterArray[0].length)
+        // select a flower
+        let availableIndices = [...Array(components.length).keys()].filter(i => !window.letterData[letter].flowerIndices.has(i));
+        if (availableIndices.length === 0) {
+            window.letterData[letter].flowerIndices.clear();
+            availableIndices = [...Array(components.length).keys()];
         }
 
-        // select flower
-        let flowerIndex = Math.floor(Math.random() * components.length)
-        let width = components[flowerIndex][0].attr('width') * 0.3
-        let height = components[flowerIndex][0].attr('height') * 0.3
-        let svg = components[flowerIndex][0].clone().css({
+        let flowerIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+        window.letterData[letter].flowerIndices.add(flowerIndex);
+
+        
+        let svg = $(components[flowerIndex][0])
+        let width = svg.attr('width') * 0.25
+        let height = svg.attr('height') * 0.25   
+        svg.css({
             'position':'absolute',
             'width':`${width}px`,
             'height':`${height}px`,
-            'top':`${22*row - height / 2}px`,    //want to position based on center of element
-            'left':`${22*col - width / 2}px`,
+            'top':`${16*row - height / 2}px`,    //want to position based on center of element
+            'left':`${16*col - width / 2}px`,
         })
         $(`#${id}`).append(svg)
-        svg.addClass('grow')
+        requestAnimationFrame(() => {
+            svg.addClass('grow')
+        });
 
-        letterArray = markSurroundingPoints(row, col, letterArray, components[flowerIndex][1])
+        markSurroundingPoints(row, col, components[flowerIndex][1], letter)
     }
-    console.log(letterArray)
+    console.log(window.letterData[letter].array)
 }
 
-function keepPoint(row, col, array) {
-    if (array[row][col] == 0) {
-        return false
-    } else if(array[row][col] == 1){
-        return true
-    } else if(array[row][col] == 2) {
-        return Math.random() < 0.15
-    } else {
-        return false
-    }
+function keepPoint(row, col, letter) {
+    return window.letterData[letter].array[row][col] == 1 || (window.letterData[letter].array[row][col] == 2 && Math.random() < 0.1)
 }
 
 // just marks surrounding edges
-function markSurroundingPoints(row, col, array, index) {
+function markSurroundingPoints(row, col, index, letter) {
+    //TODO: do we want to block of the direct neighbor layer
+    let array = window.letterData[letter].array
     let width = index - 1;
-    array[row][col] = 3
+
     for(let i = row - width; i <= row + width; i++) {
         for(let j = col - width; j <= col + width; j++) {
-            if(i == row && j == col) {
-                array[i][j] = 3;
-            }
-            else if(i >= 0 && i < array.length && j >= 0 && j < array[0].length && array[i][j] == 1) {
-                array[i][j] = 2
+            if (i >= 0 && i < array.length && j >= 0 && j < array[0].length) {
+                if (array[i][j] === 1) {
+                    array[i][j] = 2;
+                    window.letterData[letter].oneCount--;
+                }
+                if (i === row && j === col) {
+                    array[i][j] = 3;
+                } 
             }
         }
     }
-    return array;
+    
 }
 
-const element = document.getElementById("test3"); // Replace with your element's ID
-let intervalId;
+window.letterData = {};
 
-element.addEventListener("mouseenter", () => {
-    // maybe here copy the letter array and pass it to
-    intervalId = setInterval(adjacentSpots, 100, 'test3'); // Calls function every 100ms
-});
+//let alphabet = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'H']
+for(let letter of alphabet) {
+    const element = document.getElementById(letter)
+    window[`interval${letter}`];
+    window[`array${letter}`] = structuredClone(window[`${letter}Enum`])
+   // let threshold = window[`${letter}Enum`].flat().filter(e => e == 1).length * 0.05
+    window[`${letter}Indicies`] = []
 
-element.addEventListener("mouseleave", () => {
-    clearInterval(intervalId); // Stops calling the function
-});
+    window.letterData[letter] = {
+        interval: null,
+        array: structuredClone(window[`${letter}Enum`]),
+        oneCount: window[`${letter}Enum`].flat().filter(e => e == 1).length,
+        flowerIndices: new Set()
+    };
+
+    if (element){
+        element.addEventListener("mouseenter", () => {
+            //window[`interval${letter}`] = setInterval(adjacentSpots, 200, letter, window[`array${letter}`], letter);
+
+           if (!window.letterData[letter].interval) {
+                window.letterData[letter].interval = setInterval(() => {
+                    adjacentSpots(letter, letter);
+                }, 200);
+            }
+            
+        });
+        
+        element.addEventListener("mouseleave", () => {
+            console.log('mouse leave')
+            //clearInterval(window[`interval${letter}`]); // Stops calling the function
+
+            clearInterval(window.letterData[letter].interval);
+            window.letterData[letter].interval = null;
+        });
+    }
+
+}

@@ -1,4 +1,4 @@
-let pinkLarge = $(`
+let pinkLarge = `
 <svg width="326" height="315" viewBox="0 0 326 315" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_18_2146)">
 <path d="M106.274 23.2246C96.646 42.7691 144.733 147 144.733 147H178.651C178.651 147 223.193 42.7672 216.774 23.2246C210.356 3.68212 191.489 0.423025 178.651 23.2246C175.442 -9.34871 146.556 -6.09156 140.137 23.2246C130.509 3.68018 115.903 3.68021 106.274 23.2246Z" fill="#F56DAE"/>
@@ -79,9 +79,9 @@ let pinkLarge = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let pinkMed = $(`
+let pinkMed = `
     <svg width="251" height="243" viewBox="0 0 251 243" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_4003)">
 <path d="M82.0531 17.9481C74.6191 33.0085 111.747 113.326 111.747 113.326H137.934C137.934 113.326 172.325 33.007 167.369 17.9481C162.413 2.8891 147.846 0.37773 137.934 17.948C135.456 -7.15212 113.154 -4.64224 108.198 17.948C100.764 2.8876 89.487 2.88763 82.0531 17.9481Z" fill="#F56DAE"/>
@@ -162,9 +162,9 @@ let pinkMed = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let pinkSmall = $(`
+let pinkSmall = `
     <svg width="139" height="134" viewBox="0 0 139 134" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_29_6692)">
 <path d="M45.4397 9.90952C41.3229 18.2488 61.8835 62.7221 61.8835 62.7221H76.3858C76.3858 62.7221 95.4307 18.2479 92.6861 9.90952C89.9416 1.57109 81.8749 0.180497 76.3858 9.9095C75.0135 -3.98892 62.663 -2.59915 59.9184 9.9095C55.8015 1.57026 49.5565 1.57028 45.4397 9.90952Z" fill="#F56DAE"/>
@@ -246,9 +246,9 @@ let pinkSmall = $(`
 </defs>
 </svg>
 
-`)
+`
 
-let hydrangeaLarge = $(`
+let hydrangeaLarge = `
     <svg width="358" height="327" viewBox="0 0 358 327" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_4238)">
 <path d="M243.65 199.943C231.566 180.962 225.929 178.624 213.053 179.065L202.601 185.719C196.136 196.998 199.358 202.06 211.709 221.462L211.709 221.462C224.061 240.864 255.733 218.923 243.65 199.943Z" fill="#759EE4"/>
@@ -892,9 +892,9 @@ let hydrangeaLarge = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let hydrangeaMed = $(`
+let hydrangeaMed = `
     <svg width="254" height="226" viewBox="0 0 254 226" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_4240)">
 <path d="M207.65 161.915C195.566 142.935 189.929 140.596 177.053 141.037L166.601 147.691C160.136 158.971 163.358 164.032 175.709 183.434L175.709 183.434C188.061 202.836 219.733 180.895 207.65 161.915Z" fill="#759EE4"/>
@@ -1112,9 +1112,9 @@ let hydrangeaMed = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let hydrangeaSmall = $(`
+let hydrangeaSmall = `
     <svg width="171" height="164" viewBox="0 0 171 164" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_4394)">
 <path d="M124.65 98.9427C112.566 79.9624 106.929 77.6242 94.053 78.0652L83.6007 84.7193C77.1356 95.9985 80.3578 101.06 92.7094 120.462L92.7095 120.462C105.061 139.864 136.733 117.923 124.65 98.9427Z" fill="#759EE4"/>
@@ -1190,9 +1190,9 @@ let hydrangeaSmall = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let leaf = $(`
+let leaf = `
     <svg width="178" height="184" viewBox="0 0 178 184" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_16_1232)">
 <path d="M120.115 118.015C85.609 155.641 41.5708 166.643 22.996 149.609C4.4213 132.574 26.3966 99.7362 60.9029 62.1104C95.4092 24.4847 136.023 16.654 147.028 26.7462C165.603 43.781 148.101 87.5 120.115 118.015Z" fill="#5FA65C"/>
@@ -1211,9 +1211,9 @@ let leaf = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let purpleLarge = $(`
+let purpleLarge = `
     <svg width="366" height="358" viewBox="0 0 366 358" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_15_150)">
 <path d="M82.7246 288.746C95.7736 285.375 151.282 239.529 178.273 189.714L167.297 178.074C112.52 201.705 61.7417 248.055 56.3118 260.735C50.8819 273.415 69.6757 292.116 82.7246 288.746Z" fill="#C965ED"/>
@@ -1336,9 +1336,9 @@ let purpleLarge = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let purpleMed = $(`
+let purpleMed = `
     <svg width="270" height="264" viewBox="0 0 270 264" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3815)">
 <path d="M61.0402 213.058C70.6687 210.571 111.627 176.742 131.543 139.985L123.444 131.396C83.0253 148.833 45.5575 183.034 41.5509 192.39C37.5443 201.746 51.4118 215.545 61.0402 213.058Z" fill="#C965ED"/>
@@ -1461,9 +1461,9 @@ let purpleMed = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let purpleSmall = $(`
+let purpleSmall = `
     <svg width="145" height="142" viewBox="0 0 145 142" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3835)">
 <path d="M32.781 114.42C37.9518 113.085 59.9478 94.9172 70.6437 75.1774L66.294 70.5645C44.5878 79.929 24.4662 98.2958 22.3145 103.32C20.1628 108.345 27.6101 115.756 32.781 114.42Z" fill="#C965ED"/>
@@ -1586,9 +1586,9 @@ let purpleSmall = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let roseLarge = $(`
+let roseLarge = `
     <svg width="361" height="338" viewBox="0 0 361 338" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_16_359)">
 <path d="M187.637 112.291L144.768 118.735C94.7406 84.6684 97.531 53.2219 129.88 46.6067C135.697 34.408 164.362 27.9858 176.707 39.5685C211.666 37.5145 221.983 68.0871 187.637 112.291Z" fill="#F00049"/>
@@ -1827,9 +1827,9 @@ let roseLarge = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let roseMed = $(`
+let roseMed = `
     <svg width="277" height="278" viewBox="0 0 277 278" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3930)">
 <path d="M128.221 97.1931L101.28 123.005C49.1859 123.879 35.5287 100.377 54.9873 79.6668C53.0188 68.1994 69.9827 49.4536 84.4153 51.4719C107.974 32.6736 130.413 49.0544 128.221 97.1931Z" fill="#F00049"/>
@@ -1977,9 +1977,9 @@ let roseMed = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let roseSmall = $(`
+let roseSmall = `
     <svg width="146" height="141" viewBox="0 0 146 141" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3966)">
 <path d="M81.7547 64.103L55.7824 64.103C29.1763 39.4028 33.6298 20.974 53.3845 19.9328C57.9176 13.2066 75.4722 11.9511 81.7547 19.9328C102.65 21.8337 106.04 40.9137 81.7547 64.103Z" fill="#F00049"/>
@@ -2049,9 +2049,9 @@ let roseSmall = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let yellowLarge = $(`
+let yellowLarge = `
     <svg width="316" height="306" viewBox="0 0 316 306" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_14_32)">
 <path d="M47.5 67.8002C51 105.8 97.2672 126.901 133.5 136.3L152.5 124.3C160.507 83.0438 167 27.8002 137.5 15.8002C108 3.80021 44 29.8002 47.5 67.8002Z" fill="#FFDD48"/>
@@ -2122,9 +2122,9 @@ let yellowLarge = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let yellowMed = $(`
+let yellowMed = `
     <svg width="247" height="240" viewBox="0 0 247 240" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3915)">
 <path d="M37.2269 53.8682C39.9699 83.5582 76.2306 100.045 104.627 107.388L119.518 98.0125C125.793 65.7782 130.882 22.6157 107.762 13.24C84.6421 3.86419 34.4839 24.1783 37.2269 53.8682Z" fill="#FFDD48"/>
@@ -2195,9 +2195,9 @@ let yellowMed = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
-let yellowSmall = $(`
+let yellowSmall = `
     <svg width="145" height="141" viewBox="0 0 145 141" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_28_3922)">
 <path d="M21.8539 31.1936C23.4641 48.6766 44.7508 58.3848 61.4208 62.7091L70.1623 57.1881C73.846 38.2068 76.8335 12.7903 63.2611 7.26937C49.6887 1.74841 20.2436 13.7105 21.8539 31.1936Z" fill="#FFDD48"/>
@@ -2268,8 +2268,9 @@ let yellowSmall = $(`
 </filter>
 </defs>
 </svg>
-`)
+`
 
 //let components = [pinkLarge, pinkMed, pinkSmall, hydrangeaLarge, hydrangeaMed, hydrangeaSmall, leaf, purpleLarge, purpleMed, purpleSmall, roseLarge, roseMed, roseSmall, yellowLarge, yellowMed, yellowSmall]
 
+//save text and not jquery element
 let components = [[pinkLarge, 3], [pinkMed, 2], [pinkSmall, 1], [hydrangeaLarge, 3], [hydrangeaMed, 2], [hydrangeaSmall, 1], [leaf, 1], [purpleLarge, 3], [purpleMed, 2], [purpleSmall, 1], [roseLarge, 3], [roseMed, 2], [roseSmall, 1], [yellowLarge, 3], [yellowMed, 2], [yellowSmall, 1]]

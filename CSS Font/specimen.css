@@ -11,7 +11,6 @@ a {
 }
 
 #popout {
-    content-visibility: hidden;
     position: fixed;
     left: 0;
     top: calc(50% - 20px);
@@ -22,6 +21,11 @@ a {
     border-radius: 0 8px 8px 0;
     cursor: default;
     transition: width 1s, height 1s, top 1s;
+    content: '';
+}
+
+#popout > span {
+    display: none;
 }
 
 #popout:hover {
@@ -31,8 +35,11 @@ a {
 #popout.open {
     width: 200px;
     height: 135px;
-    content-visibility: visible;
     padding: 16px;
     top: calc(50% - 67.5px);
     transition: width 1s, height 1s, top 1s;
+}
+
+#popout.open > span {
+    display: block;
 }

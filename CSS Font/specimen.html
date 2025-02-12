@@ -40,6 +40,9 @@
         <div id="Y"></div>
         <div id="Z"></div>
     </div>
+    <div id="popout" onClick="toggle()">
+        Bloom is an interactive font made by Isabel Boufarah for WashU's Advanced Interactive Design course. Take your time watering the garden to reveal the letters.
+    </div>
    
     <script src="letters.js"></script>
     <script src="components.js"></script>
@@ -47,6 +50,11 @@
     <script>
         let alphabet = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
         setUp(alphabet)
+
+        function toggle() {
+            var element = document.getElementById("popout");
+            element.classList.toggle("open");
+        }
     </script>
 </body>
 </html>

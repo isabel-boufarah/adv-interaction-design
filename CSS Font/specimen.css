@@ -9,3 +9,30 @@ a {
     bottom: 32px;
     right: 32px;
 }
+
+#popout {
+    content-visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: calc(50% - 20px);
+    height: 80px;
+    width: 30px;
+    background-color: #3E703C;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    cursor: default;
+    transition: width 1s, height 1s, top 1s;
+}
+
+#popout:hover {
+    background-color: #223d21;
+}
+
+#popout.open {
+    width: 200px;
+    height: 135px;
+    content-visibility: visible;
+    padding: 16px;
+    top: calc(50% - 67.5px);
+    transition: width 1s, height 1s, top 1s;
+}

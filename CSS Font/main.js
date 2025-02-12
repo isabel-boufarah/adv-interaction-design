@@ -1,14 +1,3 @@
-// if an index is chosen, don't choose direct neighbors?
-// decide on a subset number, if an index is chosen, don't choose itself or direct neighbors
-
-// choose the subset and then draw the flowers, don't decide one at a time?
-
-//inc probability as you go
-
-//https://sighack.com/post/poisson-disk-sampling-bridsons-algorithm
-// the issue is we can have neighboring points sometimes
-
-
 // if a flower is touching another spot, make that spot less liekly to have a flower
 function adjacentSpots(id, letter) {
     console.log('call adjacent spots')
@@ -81,35 +70,37 @@ function markSurroundingPoints(row, col, index, letter) {
 
 letterData = {};
 
-//let alphabet = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'H']
-for(let letter of alphabet) {
-    const element = document.getElementById(letter)
-
-    letterData[letter] = {
-        interval: null,
-        array: structuredClone(letterEnums[letter]),
-        oneCount: letterEnums[letter].flat().filter(e => e == 1).length,
-        flowerIndices: new Set(),
-        done: false
-    };
-
-    if (element){
-        element.addEventListener("mouseenter", () => {
-           if (!letterData[letter].interval && !letterData[letter].done) {
-                console.log('set interval')
-                letterData[letter].interval = setInterval(() => {
-                    adjacentSpots(letter, letter);
-                }, 200);
-            }
+function setUp(alphabet) {
+    for(let letter of alphabet) {
+        const element = document.getElementById(letter)
+    
+        letterData[letter] = {
+            interval: null,
+            array: structuredClone(letterEnums[letter]),
+            oneCount: letterEnums[letter].flat().filter(e => e == 1).length,
+            flowerIndices: new Set(),
+            done: false
+        };
+    
+        if (element){
+            element.addEventListener("mouseenter", () => {
+               if (!letterData[letter].interval && !letterData[letter].done) {
+                    console.log('set interval')
+                    letterData[letter].interval = setInterval(() => {
+                        adjacentSpots(letter, letter);
+                    }, 200);
+                }
+                
+            });
             
-        });
-        
-        element.addEventListener("mouseleave", () => {
-            console.log('mouse leave')
-            clearInterval(letterData[letter].interval);
-            letterData[letter].interval = null;
-        });
+            element.addEventListener("mouseleave", () => {
+                console.log('mouse leave')
+                clearInterval(letterData[letter].interval);
+                letterData[letter].interval = null;
+            });
+        }
+    
     }
-
 }
+
+//let alphabet = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']

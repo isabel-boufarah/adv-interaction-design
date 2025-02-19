@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/adv-interaction-design/scroll-charrette/static/css/main.d9113bed.css",
+    "main.js": "/adv-interaction-design/scroll-charrette/static/js/main.70288081.js",
+    "static/js/453.c69f964c.chunk.js": "/adv-interaction-design/scroll-charrette/static/js/453.c69f964c.chunk.js",
+    "static/media/flower-1.webp": "/adv-interaction-design/scroll-charrette/static/media/flower-1.6c4a79b44ed37838b38b.webp",
+    "static/media/flower-3.jpg": "/adv-interaction-design/scroll-charrette/static/media/flower-3.e41b2dc157af708f1c89.jpg",
+    "static/media/flower-4.jpg": "/adv-interaction-design/scroll-charrette/static/media/flower-4.cde64d3918c9c74bc425.jpg",
+    "static/media/flower-2.jpg": "/adv-interaction-design/scroll-charrette/static/media/flower-2.f6dd90bd8e476fb75783.jpg",
+    "static/media/logo.svg": "/adv-interaction-design/scroll-charrette/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/adv-interaction-design/scroll-charrette/index.html",
+    "main.d9113bed.css.map": "/adv-interaction-design/scroll-charrette/static/css/main.d9113bed.css.map",
+    "main.70288081.js.map": "/adv-interaction-design/scroll-charrette/static/js/main.70288081.js.map",
+    "453.c69f964c.chunk.js.map": "/adv-interaction-design/scroll-charrette/static/js/453.c69f964c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9113bed.css",
+    "static/js/main.70288081.js"
+  ]
+}

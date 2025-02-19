@@ -21,7 +21,7 @@ import Fifteen from './components/Fifteen';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/scroll-charrette">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,0 +1,12 @@
+.main {
+    height: 3000px;
+    width: 100%;
+    background-color: pink;
+    animation: color linear;
+    animation-timeline: scroll();
+}
+
+@keyframes color {
+    50% {background-color: rgb(99, 210, 99);}
+    100% {background-color: rgb(134, 134, 242);}
+}

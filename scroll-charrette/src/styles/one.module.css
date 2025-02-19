@@ -1,0 +1,15 @@
+.progress {
+    background-color: green;
+    height: 20px;
+    scale: 0 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform-origin: left;
+    animation: one linear;
+    animation-timeline: scroll();
+}  
+
+@keyframes one {
+    to {scale: 1 1;}
+}

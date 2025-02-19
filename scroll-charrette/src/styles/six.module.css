@@ -1,0 +1,29 @@
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+    margin: 10px 0;
+
+    transform: rotate(90deg) translate(-100px);
+    transform-origin: right top;
+}
+
+.main {
+    width: 100px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    top: 200px;
+
+    transform: rotate(-90deg);
+    transform-origin: right top;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+

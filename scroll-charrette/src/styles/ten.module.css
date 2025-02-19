@@ -1,0 +1,17 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: calc(100vh - 56px - 56px);
+    scroll-snap-align: start;
+    padding: 56px 24px;
+}
+
+.section1, .section3, .section5 {
+    background-color: burlywood;
+}
+
+.section2, .section4 {
+    background-color: cadetblue;
+}

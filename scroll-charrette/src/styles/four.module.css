@@ -1,0 +1,42 @@
+.section {
+    height: 100vh;
+}
+
+.container {
+    
+}
+
+.sticky_parent {
+    height: 500vh;
+}
+
+/* .sticky {
+    overflow: hidden; 
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border: solid red 1px;
+} */
+
+.scroll_section {
+    /* position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 500vw; must be same as .sticky height */
+    transform: rotate(-90deg);
+    transform-origin: right top;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw; */
+}
+
+.img {
+    width: 200px;
+    height:200px;
+    /* object-fit: cover;
+    object-position: center; */
+}

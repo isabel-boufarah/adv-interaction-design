@@ -1,0 +1,15 @@
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    animation: rotate linear;
+    animation-timeline: scroll();
+    position: fixed;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+

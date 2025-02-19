@@ -1,0 +1,32 @@
+.div {
+    height: 3000px;
+}
+
+.svg {
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 211px);
+    transform-origin: center;
+    animation: star linear;
+    animation-timeline: scroll();
+    scale: 0.5;
+
+    path {
+        animation: color linear;
+        animation-timeline: scroll();
+    }
+    
+}
+
+@keyframes star {
+    to {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
+
+@keyframes color {
+    to {
+        fill: rgb(131, 131, 224);
+    }
+}

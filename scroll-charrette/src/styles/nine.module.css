@@ -1,0 +1,44 @@
+.main {
+    background-color: coral;
+    height: 3000px;
+    position: relative;
+}
+
+.sq {
+    width: 100px;
+    height: 100px;
+}
+
+.div1 {
+    background-color: cadetblue;
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 50px);
+    animation: spin linear;
+    animation-timeline: scroll();
+}
+
+.div2 {
+    background-color: rgb(74, 138, 140);
+    position: fixed;
+    top: 170px;
+    left: calc(50% - 120px);
+    transform-origin: center;
+
+    animation: spin linear;
+    animation-timeline: scroll();
+}
+.div3{
+    background-color: rgb(39, 96, 98);
+    position: fixed;
+    top: 170px;
+    left: calc(50% + 20px);
+    animation: spin linear;
+    animation-timeline: scroll();
+
+}
+
+@keyframes spin {
+    100% { transform: translate(300px, 300px) rotate(1000deg);}
+
+}

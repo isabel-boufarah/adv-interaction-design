@@ -1,0 +1,77 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            /* position: fixed; */
+            width: 100%;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            height: min(80vh, 80vw);
+            width: min(80vh, 80vw);
+            gap: 8px;
+            
+        }
+
+        .image {
+            background-color: cornflowerblue;
+            border: 1px solid black;
+        }
+
+        #section1 {
+            height: 3000px;
+        }
+        #stage1 {
+            animation-name: stage1;
+            animation-timeline: view(min(80vh, 80vw));
+        }
+
+        @keyframes stage1 {
+            to {transform: translate(300px, 300px);}
+        }
+
+        #section2 {
+            height: 3000px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+    </section>
+    <section id="section1">
+        <div id="container">
+            <div id="grid">
+                <div class="image" id="stage1"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+            </div>
+        </div>
+    </section>
+    <section id="section2"></section>
+    
+</body>
+</html>

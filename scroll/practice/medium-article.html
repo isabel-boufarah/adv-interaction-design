@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="overflow-y: scroll; height: 100vh;">
+        <div id="scrollingElement" style="height: 8000px; position: relative; background-color: blue;">
+            <div id="sticky" style="height: 400px; position: sticky; top: 0; background-color: red;">
+                Hello world, from section 1!
+            </div>
+        </div>
+
+        <div style="height: 8000px; position: relative;">
+            <div style="height: 400px; position: sticky; top: 0;">
+                Hello world, from section 2!
+            </div>
+        </div>
+    </div>
+    <script>
+        function onScroll(container, stickySelf) {
+            const containerRect = container.getBoundingClientRect();
+            const selfRect = stickySelf.getBoundingClientRect();
+            const offTop = containerRect.y - selfRect.y;
+
+            if (containerRect.height < selfRect.height) {
+                const viewHeight = selfRect.height - containerRect.height;
+                return(offTop / viewHeight);
+            } else {
+                const viewHeight = containerRect.height;
+                const result = offTop < 0 ? offTop / viewHeight : offTop / viewHeight + 1;
+                return(result);
+            }
+        }
+
+        let scrollingElement = document.getElementById('container');
+        scrollingElement.addEventListener('scroll', (e) => {
+            console.log('scroll')
+            const container = document.getElementById('container');
+            const stickySelf = document.getElementById('scrollingElement');
+            const result = onScroll(container, stickySelf);
+            console.log(result);
+        });
+    </script>
+</body>
+</html>

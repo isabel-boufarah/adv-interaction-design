@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Compete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down" />
+
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sections.css">
+</head>
+<body>
+    <div id="scroll-container">
+        <header>
+            <div>To Compete</div>
+            <div>Isabel Boufarah</div>
+        </header>
+
+        <!-- each section needs position:relative and defined height -->
+        <section id="section1">
+            <div id="title">
+                <div>To Compete</div>
+            </div>
+            <span class="material-symbols-outlined">
+                keyboard_arrow_down
+            </span>
+        </section>
+
+        <section class="photo-section" id="section2">
+            <div class="photo-container">
+                <div class="photo-grid">
+                    <div class="image" id="stage1"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image" id="center-image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section style="height: 8000px; position: relative;">
+            <div style="height: 400px; position: sticky; top: 0;">
+                Hello world, from section 2!
+            </div>
+        </section>
+    </div>
+
+    <script src="js/scrollFunctions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

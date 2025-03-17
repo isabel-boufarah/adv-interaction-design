@@ -1,0 +1,102 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best practice</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #scroll-container {
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        #scrollingElement {
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            height: 8000px;
+            position: relative;
+            /* width: 100%; */
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            height: min(80vh, 80vw);
+            width: min(80vh, 80vw);
+            gap: 8px;
+            position: sticky;
+            top: 0;
+            
+        }
+
+        .image {
+            background-color: cornflowerblue;
+            border: 1px solid black;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="scroll-container">
+        <div id="scrollingElement">
+            <div id="grid">
+                <div class="image" id="stage1"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+            </div>
+        </div>
+
+        <div style="height: 8000px; position: relative;">
+            <div style="height: 400px; position: sticky; top: 0;">
+                Hello world, from section 2!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function onScroll(container, stickySelf) {
+            const containerRect = container.getBoundingClientRect();
+            const selfRect = stickySelf.getBoundingClientRect();
+            const offTop = containerRect.y - selfRect.y;
+
+            if (containerRect.height < selfRect.height) {
+                const viewHeight = selfRect.height - containerRect.height;
+                return(offTop / viewHeight);
+            } else {
+                const viewHeight = containerRect.height;
+                const result = offTop < 0 ? offTop / viewHeight : offTop / viewHeight + 1;
+                return(result);
+            }
+        }
+
+        let scrollingElement = document.getElementById('scroll-container');
+        scrollingElement.addEventListener('scroll', (e) => {
+            console.log('scroll')
+            const container = document.getElementById('scroll-container');
+            const stickySelf = document.getElementById('scrollingElement');
+            const result = onScroll(container, stickySelf);
+            console.log(result);
+            grow(result)
+        });
+
+        function grow(ratio) {
+            const stage1 = document.getElementById('stage1');
+            stage1.style.transform = `scale(${ratio + 1})`;
+        }
+    </script>
+    
+</body>
+</html>

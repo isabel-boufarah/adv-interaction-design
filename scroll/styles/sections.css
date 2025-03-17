@@ -1,0 +1,21 @@
+#section1 {
+    font: var(--title);
+    
+    #title {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    span {
+        position: relative;
+        top: -80px;
+        left: calc(50% - 24px);
+        font-size: 3rem;
+    }
+}
+
+/* #section2 {'
+   position: relative;
+} */

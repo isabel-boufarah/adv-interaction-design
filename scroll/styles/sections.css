@@ -16,6 +16,34 @@
     }
 }
 
-/* #section2 {'
-   position: relative;
-} */
+#section3 {
+    /* div {
+        height: 400px;
+    } */
+     align-items: normal;
+    
+    img {
+        width: 200px;
+    }
+}
+
+.goals {
+    div {
+        /* top: calc(50vh - 100px); final position */
+        position: absolute;
+        left: calc(50vw - 100px);
+        top: calc(50vh + 200px);
+        opacity: 0;
+    }
+    /* div:first-of-type {
+        
+        
+        
+    }
+    div:nth-of-type(2) {
+       transform: rotate(-20deg);
+    }
+    div:nth-of-type(3) {
+        transform: rotate(20deg);
+    } */
+}

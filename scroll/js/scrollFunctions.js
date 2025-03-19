@@ -15,14 +15,34 @@ function onScroll(container, stickySelf) {
 }
 
 // grow x2 and move to center
-function grow(ratio, id, delta) {
+function grow(ratio, id, deltaPos) {
     if(ratio > 1) return; 
 
     const stage = document.getElementById(id);
     
-    const translateX = Math.min(delta * ratio, delta);  //will this have to be math.max when negative?, maybe need to check abs val
-    const translateY = Math.min(delta * ratio, delta);
+    const translateX = Math.min(deltaPos * ratio, deltaPos);  //will this have to be math.max when negative?, maybe need to check abs val
+    const translateY = Math.min(deltaPos * ratio, deltaPos);
+    //const scale = Math.min(deltaSize * ratio, deltaSize);
 
     stage.style.transform = `scale(${ratio + 1}) translate(${translateX}px, ${translateY}px)`;
+    
+}
+
+function translateUpAndOpacity(result, id, min, max, rotate) {
+    const el = document.getElementById(id);
+
+    if(result < 0) {
+        el.style.opacity = 0;
+    } else {
+        // lets say there are three post its
+        // for first one, only want result from 0 to 0.33
+        let scale = result < min ? 0 : result < max ? (result - min) /(max - min) : 1
+
+        if(scale > 0) el.style.opacity = 1;
+        if (scale == 0) el.style.opacity = 0;
+
+        el.style.transform = `translateY(${scale * -300}px) rotate(${rotate}deg)`;
+
+    }
     
 }

@@ -17,7 +17,6 @@ body {
 
 .image {
     background-color: cornflowerblue;
-    border: 1px solid black;
 }
 
 .photo-section {
@@ -25,7 +24,7 @@ body {
     position: relative;
 }
 
-.photo-container {
+.sticky-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,6 +42,12 @@ body {
     gap: 8px;
     /* position: sticky;
     top: 0; */
+
+    .image:first-of-type {
+        background-image: url('../pictures/stage1-cover.JPEG');
+        background-size: cover;
+        background-position-y: -25px;
+    }
 }
 
 header {

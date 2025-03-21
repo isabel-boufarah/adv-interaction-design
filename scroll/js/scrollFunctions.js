@@ -15,20 +15,20 @@ function onScroll(container, stickySelf) {
 }
 
 // grow x2 and move to center
-function grow(ratio, id, deltaPos) {
+function grow(ratio, id, deltaPosX, deltaPosY) {
     if(ratio > 1) return; 
 
     const stage = document.getElementById(id);
     
-    const translateX = Math.min(deltaPos * ratio, deltaPos);  //will this have to be math.max when negative?, maybe need to check abs val
-    const translateY = Math.min(deltaPos * ratio, deltaPos);
+    const translateX = Math.min(deltaPosX * ratio, deltaPosX);  //will this have to be math.max when negative?, maybe need to check abs val
+    const translateY = Math.min(deltaPosY * ratio, deltaPosY);
     //const scale = Math.min(deltaSize * ratio, deltaSize);
 
     stage.style.transform = `scale(${ratio + 1}) translate(${translateX}px, ${translateY}px)`;
     
 }
 
-function translateUpAndOpacity(result, id, min, max, rotate) {
+function translateUpAndOpacity(result, id, totalDelta, units, min, max, rotate) {
     const el = document.getElementById(id);
 
     if(result < 0) {
@@ -41,8 +41,19 @@ function translateUpAndOpacity(result, id, min, max, rotate) {
         if(scale > 0) el.style.opacity = 1;
         if (scale == 0) el.style.opacity = 0;
 
-        el.style.transform = `translateY(${scale * -300}px) rotate(${rotate}deg)`;
+        el.style.transform = `translateY(${scale * totalDelta}${units}) rotate(${rotate}deg)`;
 
     }
     
+}
+
+function isInViewport(value) { 
+    const item = value.getBoundingClientRect(); 
+    console.log(item.top, item.bottom);
+    return ( 
+        item.top <= 0 || 
+        item.bottom >= ( 
+            window.innerHeight || 
+            document.documentElement.clientHeight)
+    ); 
 }

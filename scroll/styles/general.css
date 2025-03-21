@@ -11,8 +11,9 @@ body {
 #scroll-container {
     overflow-y: scroll;
     height: 100vh;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    overflow-x: hidden;
 }
 
 .image {
@@ -33,6 +34,12 @@ body {
     top: 0;
 }
 
+.sticky-section-no-flex {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -40,13 +47,23 @@ body {
     height: min(80vh, 80vw);
     width: min(80vh, 80vw);
     gap: 8px;
-    /* position: sticky;
-    top: 0; */
 
     .image:first-of-type {
-        background-image: url('../pictures/stage1-cover.JPEG');
+        background-image: url('../pictures/shoes_cover.JPEG');
+        background-size: cover;
+        background-position-y: -27px;
+    }
+
+    .image:nth-of-type(2) {
+        background-image: url('../pictures/bike_feet_cover.JPEG');
         background-size: cover;
         background-position-y: -25px;
+    }
+
+    .image:nth-of-type(3) {
+        background-image: url('../pictures/ATR.JPEG');
+        background-size: cover;
+        /* background-position-y: -25px; */
     }
 }
 
@@ -63,4 +80,17 @@ header {
     top: 0;
     width: calc(100% - 32px);
     z-index: 10;
+}
+
+[scroll-frames] {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 65%;
+    margin: auto;
+}
+
+hr {
+    opacity: 0;
 }

@@ -8,26 +8,33 @@
         align-items: center;
     }
 
-    span {
+    #cta {
         position: relative;
         top: -80px;
-        left: calc(50% - 24px);
+        font: var(--subtext);
+        color: var(--subtext-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        margin: auto;
+    }
+
+    span {
         font-size: 3rem;
     }
 }
 
 #section3 {
-    /* div {
-        height: 400px;
-    } */
-     align-items: normal;
+     /* align-items: normal; */
     
-    img {
-        width: 200px;
-    }
+    
 }
 
 .goals {
+    img {
+        width: 200px;
+    }
     div {
         /* top: calc(50vh - 100px); final position */
         position: absolute;
@@ -35,15 +42,16 @@
         top: calc(50vh + 200px);
         opacity: 0;
     }
-    /* div:first-of-type {
-        
-        
-        
+}
+
+.woSheets {
+    img {
+        /* aspect ratio is roughly 50:65 */
+        height: 70vh;
+        position: absolute;
+        left: calc(50vw - 23.5vh);
+        top: calc(50vh + 47vh);
+        /* top: calc(50vh - 35vh);  final position*/
+
     }
-    div:nth-of-type(2) {
-       transform: rotate(-20deg);
-    }
-    div:nth-of-type(3) {
-        transform: rotate(20deg);
-    } */
 }

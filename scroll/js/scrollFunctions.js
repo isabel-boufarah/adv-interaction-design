@@ -20,8 +20,8 @@ function grow(ratio, id, deltaPosX, deltaPosY) {
 
     const stage = document.getElementById(id);
     
-    const translateX = Math.min(deltaPosX * ratio, deltaPosX);  //will this have to be math.max when negative?, maybe need to check abs val
-    const translateY = Math.min(deltaPosY * ratio, deltaPosY);
+    const translateX = deltaPosX > 0 ? Math.min(deltaPosX * ratio, deltaPosX) : Math.max(deltaPosX * ratio, deltaPosX);  //will this have to be math.max when negative?, maybe need to check abs val
+    const translateY = deltaPosY > 0 ? Math.min(deltaPosY * ratio, deltaPosY) : Math.max(deltaPosY * ratio, deltaPosY);  //will this have to be math.max when negative?, maybe need to check abs val
     //const scale = Math.min(deltaSize * ratio, deltaSize);
 
     stage.style.transform = `scale(${ratio + 1}) translate(${translateX}px, ${translateY}px)`;

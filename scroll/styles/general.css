@@ -63,7 +63,18 @@ body {
     .image:nth-of-type(3) {
         background-image: url('../pictures/ATR.JPEG');
         background-size: cover;
-        /* background-position-y: -25px; */
+    }
+
+    .image:nth-of-type(4) {
+        background-image: url('../pictures/4x4Hug.jpg');
+        background-size: cover;
+        background-position-y: -57px;
+    }
+
+    .image:nth-of-type(9) {
+        background-image: url('../pictures/sophie-natty.JPEG');
+        background-size: cover;
+        background-position-x: -15px;
     }
 }
 
@@ -93,4 +104,23 @@ header {
 
 hr {
     opacity: 0;
+}
+
+.section-title {
+    font: var(--section-title);
+
+    span {
+        position: absolute;
+        top: calc(100vh - 52px);
+        color: var(--subtext-color);
+        left: calc(50% - 24px);
+        font-size: 3rem;
+    }
+
+    div:first-of-type {
+        display:flex; 
+        flex-direction:column; 
+        align-items: center;
+        gap: 12px;
+    }
 }

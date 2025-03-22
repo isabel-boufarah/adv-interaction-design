@@ -67,6 +67,24 @@ scrollingElement.addEventListener('scroll', (e) => {
             grow(section5Result, 'stage2', 0, deltaPos); 
         }
     }
+
+    const stage3Grid = document.getElementById('stage3-grid');
+    if(isInViewport(stage3Grid)) {
+        const result7 = onScroll(container, stage3Grid);
+    
+        if(result7 >= 0){
+            grow(result7, 'stage3', -deltaPos, deltaPos); 
+        } 
+    }
+
+    const section7 = document.getElementById('section7');
+    if(isInViewport(section7)) {
+        const result7 = onScroll(container, section7);
+    
+        if(result7 >= 0){
+            grow(result7, 'stage4', deltaPos, 0); 
+        } 
+    }
   
    
 });

@@ -77,13 +77,38 @@ scrollingElement.addEventListener('scroll', (e) => {
         } 
     }
 
-    const section7 = document.getElementById('section7');
-    if(isInViewport(section7)) {
-        const result7 = onScroll(container, section7);
+    // const section7 = document.getElementById('section7');
+    // if(isInViewport(section7)) {
+    //     const result7 = onScroll(container, section7);
     
-        if(result7 >= 0){
-            grow(result7, 'stage4', deltaPos, 0); 
+    //     if(result7 >= 0){
+    //         grow(result7, 'stage4', deltaPos, 0); 
+    //     } 
+    // }
+
+    const stage5Grid = document.getElementById('stage5-grid');
+    if(isInViewport(stage5Grid)) {
+        const result = onScroll(container, stage5Grid);
+    
+        if(result >= 0){
+            grow(result, 'stage5', 0, 0); 
         } 
+    }
+
+    const stage6Grid = document.getElementById('stage6-grid');
+    if(isInViewport(stage6Grid)) {
+        const result = onScroll(container, stage6Grid);
+    
+        if(result >= 0){
+            grow(result, 'stage6', -deltaPos, 0); 
+        } 
+    }
+
+    const nattyCollage = document.getElementById('natty-collage');
+    if(isInViewport(nattyCollage)) {
+        const result = onScroll(container, nattyCollage);
+    
+        nattyCollageTransform(result)
     }
   
    

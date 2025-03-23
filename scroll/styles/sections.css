@@ -28,7 +28,6 @@
 #section3 {
      /* align-items: normal; */
     
-    
 }
 
 .goals {
@@ -53,5 +52,53 @@
         top: calc(50vh + 47vh);
         /* top: calc(50vh - 35vh);  final position*/
 
+    }
+}
+
+#natty-grid {
+    img {
+        opacity: 0;
+    }
+
+    #natty1{
+        width: 40%;
+        position: absolute;
+        top: calc(50vh - 20%);
+        left: calc(50% - 20%);
+    }
+
+    #natty2 {
+        width: 30%;
+        position: absolute;
+        top: 67%;
+        left: calc(50% - 15%);
+    }
+
+    #natty3 {
+        width: 43%;
+        position: absolute;
+        top: 6%;
+        left: 49%;
+    }
+
+    #natty4 {
+        position: absolute;
+        top: 39%;
+        width: 25%;
+        left: 6%;
+    }
+
+    #natty5 {
+        width: 24%;
+        position: absolute;
+        top: 40%;
+        left: 71%;    
+    }
+
+    #natty6 {
+        position: absolute;
+        top: 5%;
+        left: 18%;
+        width: 20%;    
     }
 }

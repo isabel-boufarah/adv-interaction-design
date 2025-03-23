@@ -71,6 +71,19 @@ body {
         background-position-y: -57px;
     }
 
+    .image:nth-of-type(5) {
+        background-image: url('../pictures/myrtlebeach.JPEG');
+        background-size: cover;
+        background-position-x: -63px;
+    }
+
+    .image:nth-of-type(6) {
+        background-image: url('../pictures/natty-champ.JPEG');
+        background-position-x: -25px;
+        background-position-y: -2px;
+        background-size: 138%;
+    }
+
     .image:nth-of-type(9) {
         background-image: url('../pictures/sophie-natty.JPEG');
         background-size: cover;

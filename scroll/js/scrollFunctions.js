@@ -57,3 +57,39 @@ function isInViewport(value) {
             document.documentElement.clientHeight)
     ); 
 }
+
+// the scale is slighly off
+function nattyCollageTransform(result) {
+    if (result >= 0 && result <= 1 / 6) {
+        const nattyCollage = document.getElementById('natty1');
+        let scale = result * 6;
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    } else if(result > 1/6 && result <= 2/6) {
+        const nattyCollage = document.getElementById('natty2');
+        let scale = (result - 1/6) * 6
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    } else if(result > 2/6 && result <= 3/6) {
+        const nattyCollage = document.getElementById('natty3');
+        let scale = (result - 2/6) * 6
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    } else if(result > 3/6 && result <= 4/6) {
+        const nattyCollage = document.getElementById('natty4');
+        let scale = (result - 3/6) * 6
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    } else if(result > 4/6 && result <= 5/6) {
+        const nattyCollage = document.getElementById('natty5');
+        let scale = (result - 4/6) * 6
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    } else if(result > 5/6 && result <= 1) {
+        const nattyCollage = document.getElementById('natty6');
+        let scale = (result - 5/6) * 6
+        console.log(scale)
+        nattyCollage.style.opacity = scale;
+        nattyCollage.style.transform = `scale(${scale})`;
+    }
+}

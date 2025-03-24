@@ -68,7 +68,7 @@ body {
     .image:nth-of-type(4) {
         background-image: url('../pictures/4x4Hug.jpg');
         background-size: cover;
-        background-position-y: -78px;
+        background-position-y: -57px;
     }
 
     .image:nth-of-type(5) {

@@ -102,3 +102,51 @@
         width: 20%;    
     }
 }
+
+#stage8-photos {
+    height: 100vh;
+    display: grid;
+
+    img {
+        width: 100vw;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    img:nth-of-type(2) {
+        opacity: 0;
+    }
+}
+
+.hugs {
+    img {
+        height: 70vh;
+        position: absolute;
+        left: calc(50vw -50%);
+        top: calc(50vh + 47vh);
+        
+
+
+    }
+
+    img:first-of-type {
+        height: 70vh;
+        top: 95vh;
+        left: calc(50vw - 51vh);
+
+        /* to 16 vh */
+    }
+
+    img:nth-of-type(2), img:nth-of-type(3) {
+        height: 70vh;
+        left: calc(50vw - 26vh);
+        top: 95vh;
+    }
+
+    img:nth-of-type(4) {
+        height: 80vh;
+        top: 95vh;
+        left: calc(50vw - 61vh)
+    }
+
+}

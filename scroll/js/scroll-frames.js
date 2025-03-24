@@ -214,7 +214,6 @@ const scrollFrames = {
         scrollSection.addEventListener('scroll', scrollFrames.raf);
     },
     raf: function() {
-        console.log('event listener called')
         window.requestAnimationFrame(scrollFrames.frame);
     },
     frame: function() {
@@ -230,7 +229,7 @@ const scrollFrames = {
                 }
                 const frameIndex = scrollFrames['anims'][anim_id]['transfer'](current_scroll_line);
                 const index = Math.round(frameIndex * (scrollFrames['anims'][anim_id]['backgroundSizes'].length - 1));
-                console.log(anim_id, current_scroll_line, frameIndex);
+                //console.log(anim_id, current_scroll_line, frameIndex);
                 // Apply proper background-size property
                 scrollFrames['anims'][anim_id]['el']['style']['background-size'] = scrollFrames['anims'][anim_id]['backgroundSizes'][index];
             }

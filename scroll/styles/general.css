@@ -68,7 +68,7 @@ body {
     .image:nth-of-type(4) {
         background-image: url('../pictures/4x4Hug.jpg');
         background-size: cover;
-        background-position-y: -57px;
+        background-position-y: -78px;
     }
 
     .image:nth-of-type(5) {
@@ -82,6 +82,18 @@ body {
         background-position-x: -25px;
         background-position-y: -2px;
         background-size: 138%;
+    }
+
+    .image:nth-of-type(7) {
+        background-image: url('../pictures/sec7.JPEG');
+        background-size: cover;
+        background-position-y: -38px;
+    }
+
+    .image:nth-of-type(8) {
+        background-image: url('../pictures/sec8.JPG');
+        background-size: cover;
+        background-position-x: -40px;
     }
 
     .image:nth-of-type(9) {

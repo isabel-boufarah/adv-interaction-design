@@ -110,6 +110,40 @@ scrollingElement.addEventListener('scroll', (e) => {
     
         nattyCollageTransform(result)
     }
+
+    const stage8Grid = document.getElementById('stage8-grid');
+    if(isInViewport(stage8Grid)) {
+        const result = onScroll(container, stage8Grid);
+    
+        if(result >= 0){
+            grow(result, 'stage8', 0, -deltaPos); 
+        } 
+    }
+
+    const stage8BigPhoto = document.getElementById('stage8-big-photo');
+    if(isInViewport(stage8BigPhoto)) {
+        const result = onScroll(container, stage8BigPhoto);
+    
+        increaseOpacity('cheer-fist', result);
+    }
+
+    const stage9Grid = document.getElementById('stage9-grid');
+    if(isInViewport(stage9Grid)) {
+        const result = onScroll(container, stage9Grid);
+    
+        if(result >= 0){
+            grow(result, 'stage9', -deltaPos, -deltaPos); 
+        } 
+    }
+
+    const stage9Photos = document.getElementById('stage9-photos');
+    if(isInViewport(stage9Photos)) {
+        const result = onScroll(container, stage9Photos);
+        translateUpAndOpacity(result, 'hug1', -79, 'vh', 0, 0.25, 0);
+        translateUpAndOpacity(result, 'hug2', -79, 'vh', 0.25, 0.5, -6);
+        translateUpAndOpacity(result, 'hug3', -79, 'vh', 0.5, 0.75, 8);
+        translateUpAndOpacity(result, 'hug4', -85, 'vh', 0.75, 1, 0);
+    }
   
    
 });

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 500px;
+            filter: blur(20px);
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="../resources/sophie-natty.JPEG" onclick="applyBlur()">
+        <div>Click to load</div>
+    </div>
+
+
+    <script>
+        function applyBlur() {
+            console.log('click')
+            const img = document.querySelector('img');
+            const blur = Math.floor(Math.random() * 20 + 1);
+            img.style.filter = `blur(${blur}px)`;
+        }
+    </script>
+</body>
+</html>

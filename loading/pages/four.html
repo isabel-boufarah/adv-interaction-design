@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four</title>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+    <nav>
+        <a href="three.html">Back</a>
+        <p>Four</p>
+        <a href="five.html">Next</a>
+    </nav>
+    <img src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; position: fixed; top: 0; left: 0; opacity: 0;">
+
+    <script src="../js/p5.min.js"></script>
+    <script>
+        let xPos = 50;
+        let yPos = 240;
+        function setup() {
+            createCanvas(720, 480);
+            stroke('red');
+            strokeWeight(20)
+            point(690, yPos)
+            stroke('purple');
+            strokeWeight(10);
+            point(xPos, yPos);
+
+            let p = document.createElement("p")
+            p.textContent = "use the right arrow key to reach the red dot"
+            document.body.appendChild(p)
+        }
+
+        function keyPressed() {
+            if(keyCode === RIGHT_ARROW) {
+                xPos += 20;
+                point(xPos, yPos);
+
+                if (xPos >= 680) {
+                    document.querySelector('img').style.opacity = 1;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three</title>
+    <link rel="stylesheet" href="../css/basic.css">
+    <style>
+        button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="two.html">Back</a>
+        <p>Three</p>
+        <a href="four.html">Next</a>
+    </nav>
+    <div class="container">
+        <button>click to load</button>
+    </div>
+
+    <script>
+        let vHeight = window.innerHeight;
+        let vWidth = window.innerWidth;
+        let buttonX = document.querySelector('button').getBoundingClientRect().x
+        let buttonY = document.querySelector('button').getBoundingClientRect().y
+
+        window.addEventListener('mousemove', (e) => {
+            console.log('moving')
+            let xPos = e.clientX
+            let yPos = e.clientY
+            let xDiff = xPos - buttonX
+            let yDiff = yPos - buttonY
+            if (xDiff < 105 && xDiff > -20 && yDiff < 41 && yDiff > -20) {
+                console.log('close')
+                let newX = Math.random() * vWidth
+                let newY = Math.random() * vHeight
+                document.querySelector('button').style.left = newX + 'px'
+                document.querySelector('button').style.top = newY + 'px'
+                buttonX = newX
+                buttonY = newY
+            } 
+        })
+
+    </script>
+</body>
+</html>

@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two</title>
+    <link rel="stylesheet" href="../css/basic.css">
 </head>
 <body>
+    <nav>
+        <a href="one.html">Back</a>
+        <p>Two</p>
+        <a href="three.html">Next</a>
+    </nav>
     <script src="../js/p5.min.js"></script>
     <script>
         let bottomImg, topImg;
@@ -23,6 +29,10 @@
             );
 
             createCanvas(720, 480);
+            const main = 
+            document.querySelector('main').classList.add('container');
+            document.querySelector('canvas').style.border = 'solid black 2px';
+
 
             // Hide the cursor and replace it with a picture of
             // a paintbrush.
@@ -40,6 +50,7 @@
             console.log(mouseX * 1537 / 720, mouseY * 1025 / 480);
             copy(bottomImg, mouseX, mouseY , 20 , 20 , mouseX, mouseY, 20, 20);
         }
+
     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven</title>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+    <nav>
+        <a href="six.html">Back</a>
+        <a>Seven</a>
+        <a href="eight.html">Next</a>
+    </nav>
+    <div>
+        <img src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; opacity: 0">
+        <p>KEEP MOVING</p>
+    </div>
+
+    <script>
+        let timer = null;
+
+        window.addEventListener('mousemove', (e) => {
+            console.log('moving')
+            clearTimeout(timer);
+            document.querySelector('img').style.opacity = 1;
+            document.querySelector('p').style.opacity = 0;
+
+            timer = setTimeout(() => {
+                document.querySelector('img').style.opacity = 0;
+                document.querySelector('p').style.opacity = 1;
+            }, 500)
+        })
+    </script>
+</body>
+</html>

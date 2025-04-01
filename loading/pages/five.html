@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five</title>
+    <link rel="stylesheet" href="../css/basic.css">
+
+    <style>
+        #cover {
+            background-color: burlywood;
+            width: 720px;
+            height: 480px;
+            position: relative;
+            top: 0;
+            left: 0;
+            animation: moveDown 2s ease-in forwards;
+        }
+
+        img {
+            position: fixed;
+            top: 60px;
+            left: 100px;
+            width: 720px;
+            height: 480px;
+        }
+
+        #load {
+            position: fixed;
+            top: 60px;
+            left: 100px;
+            overflow: hidden;
+            width: 720px;
+            height: 480px;
+        }
+
+        @keyframes moveDown {
+            from {top: 0}
+            to { top: 480px}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="four.html">Back</a>
+        <p>Five</p>
+        <a href="six.html">Next</a>
+    </nav>
+    <div class="container">
+        <div id="load">
+            <img src="../resources/sophie-natty.JPEG">
+            <div id="cover"></div>
+        </div>
+    </div>
+</body>
+</html>

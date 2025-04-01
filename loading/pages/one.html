@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One</title>
+    <link rel="stylesheet" href="../css/basic.css">
     <style>
         body{
             margin: 0;
@@ -15,18 +16,19 @@
             filter: blur(20px);
         }
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        .container {
+           
             gap: 32px;
         }
     </style>
 </head>
 <body>
-    <div id="container">
+    <nav>
+        <a href="../index.html">Back</a>
+        <p>One</p>
+        <a href="two.html">Next</a>
+    </nav>
+    <div class="container">
         <img src="../resources/sophie-natty.JPEG" onclick="applyBlur()">
         <div>Click to load</div>
     </div>

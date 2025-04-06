@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifteen</title>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+    <nav>
+        <a href="fourteen.html">Back</a>
+        <p>Fifteen</p>
+        <a href="sixteen.html">Sixteen</a>
+    </nav>
+    <img src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; opacity: 0;">
+    <script>
+        alert('Please wait for the image to load.')
+        setTimeout(() => {
+            alert('loaded!')
+            document.querySelector('img').style.opacity = 1;
+        }, 5000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seventeen</title>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+    <nav>
+        <a href="sixteen.html">Back</a>
+        <p>Seventeen</p>
+        <a href="eighteen.html">Eighteen</a>
+    </nav>
+    <div class="container">
+        <img src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; transform: rotate(45deg);" onclick="callRotate()">
+    </div>
+    <script>
+        function callRotate() {
+            const img = document.querySelector('img');
+            let rotation = Math.random() * 360;
+            img.style.transition = 'transform 1s';
+            img.style.transform = `rotate(${rotation}deg)`;
+        }
+    </script>
+</body>
+</html>

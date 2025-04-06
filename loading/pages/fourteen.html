@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourteen</title>
+    <link rel="stylesheet" href="../css/basic.css">
+    <style>
+        .container > div {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: chartreuse;
+            position: fixed;
+            top: 300px;
+        }
+
+        @keyframes grow {
+            0% {transform: scale(1);}
+            100% {transform: scale(3);}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="thirteen.html">Back</a>
+        <p>Fourteen</p>
+        <a href="fifteen.html">Fifteen</a>
+    </nav>
+    <div class="container">
+        <p>Click the green dot</p>
+        <div id="circle" onclick="clickDiv()"></div>
+        <img id="img" src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; opacity: 0; z-index: -1;">
+    </div>
+
+    <script>
+        function clickDiv() {
+            console.log('click')
+            //add the growing animation
+            document.querySelector('#circle').style.animation = 'grow 3s forwards';
+
+            //set timeout to stop and show image
+            setTimeout(() => {
+                document.querySelector('#circle').style.animation = 'none';
+                document.querySelector('#circle').style.opacity = 0;
+                document.querySelector('#img').style.opacity = 1;
+            }, 3000)
+        }
+    </script>
+</body>
+</html>

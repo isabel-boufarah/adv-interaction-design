@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixteen</title>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+    <nav>
+        <a href="fifteen.html">Back</a>
+        <p>Sixteen</p>
+        <a href="seventeen.html">Seventeen</a>
+    </nav>
+    <div style="display: flex; flex-direction: column; padding-top: 48px;  align-items: center;">
+        <button onclick="btnCounter()" style="width: 100px;">Click 10 times</button>
+        <img src="../resources/sophie-natty.JPEG" style="width: 720px; height: 480px; opacity: 0;">
+    </div>
+
+    
+    <script>
+        let count = 10;
+        function btnCounter() {
+            if(count == 1) {
+                document.querySelector('button').style.opacity = 0;
+                document.querySelector('img').style.opacity = 1;
+            } else {
+                count--; 
+                document.querySelector('button').innerText = `Click ${count} times`;
+            }
+            
+        }
+    </script>
+</body>
+</html>

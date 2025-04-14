@@ -1,0 +1,29 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "DynaPuff", system-ui;
+    font-size: 32px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+#door {
+    height: 100vh;
+  
+}
+
+#content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#instructions {
+    
+}

@@ -12,7 +12,10 @@ body {
 
 #door {
     height: 100vh;
-  
+}
+
+#door-behind {
+    height: 100vh;
 }
 
 #content {
@@ -24,6 +27,9 @@ body {
     align-items: center;
 }
 
-#instructions {
-    
+@keyframes open {
+    100% {
+        transform: rotateY(90deg);
+        transform-origin: right;
+    }
 }

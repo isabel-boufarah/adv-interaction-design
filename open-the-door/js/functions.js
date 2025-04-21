@@ -14,11 +14,13 @@ function transition(i, j, callback, cleanUp) {
         door.src = `doors/door${i}.jpg`
         doorBehind.src = `doors/door${j}.jpg`
         door.style.animation = "";
+        doorBehind.style.opacity = 0;
         cleanUp();
         callback();
     }, {once: true});
     
     door.style.animation = "open 3s"
+    doorBehind.style.opacity = 1;
 }
 
 function puzzle0() {
@@ -41,7 +43,7 @@ function puzzle0() {
 
     sentence.style.position = "fixed"
     sentence.style.top = instructions.getBoundingClientRect().bottom + "px"
-    sentence.style.width = "325px"
+    sentence.style.width = "377px"
     sentence.style.display = "flex"
     sentence.style.justifyContent = "space-between"
     sentence.style.alignItems = "center"
@@ -74,7 +76,8 @@ function puzzle1() {
 
     sentence.style.position = "fixed"
     sentence.style.top = instructions.getBoundingClientRect().bottom + "px"
-    sentence.style.width = "325px"
+    sentence.style.width = "363px"
+    sentence.style.height = "78px"
     sentence.style.display = "flex"
     sentence.style.justifyContent = "space-between"
     sentence.style.alignItems = "center"
@@ -90,7 +93,7 @@ function puzzle1() {
         let xDiff = xPos - buttonX
         let yDiff = yPos - buttonY
 
-        if (xDiff < 105 && xDiff > -20 && yDiff < 41 && yDiff > -20) {
+        if (xDiff < 127 && xDiff > -20 && yDiff < 83 && yDiff > -20) {
             bounceCount++;
             button.style.position = "fixed"
             let newX = Math.random() * vWidth

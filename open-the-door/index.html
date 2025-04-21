@@ -6,7 +6,7 @@
     <title>Open the door</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -14,7 +14,12 @@
         <div id="content">
             <div id="instructions"></div>
         </div>
-        <div style="display: grid; place-content: center;">
+        <div style="display: grid; place-content: end; justify-items: center;">
+            <img id="frame" src="doors/frame.png" style="grid-area: 1 / 1;">
+            
+            
+            <!-- put mid outline here -->
+            <div id="mid-frame" style="grid-area: 1 / 1;"></div>
             <img id="door-behind" style="grid-area: 1 /1">
             <img id="door" style="grid-area: 1 /1">
         </div>

@@ -11,10 +11,24 @@ body {
 }
 
 #door {
-    height: 100vh;
+    height: 90vh;
+    align-self: end;
 }
 
 #door-behind {
+    height: 90vh;
+    align-self: end;
+    opacity: 0;
+}
+
+#mid-frame {
+    background-color: #7E4830;
+    height: 93vh;
+    width: 49vh;
+    align-self: end;
+}
+
+#frame {
     height: 100vh;
 }
 
@@ -32,4 +46,26 @@ body {
         transform: rotateY(90deg);
         transform-origin: right;
     }
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    padding: 12px;
+    margin: 12px;
+
+
+    color: #fff;
+    background-color: #E91E63;;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #d71c5a;}
+
+button:active {
+  background-color: #b9194e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

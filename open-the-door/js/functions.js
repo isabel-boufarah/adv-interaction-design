@@ -2,17 +2,19 @@ let door = document.getElementById("door");
 let doorBehind = document.getElementById("door-behind");
 let content = document.getElementById("content");
 let instructions = document.getElementById("instructions");
+let knock = new Audio("sounds/knock.mp3")
+knock.loop = false;
+let doorbell = new Audio("sounds/doorbell.mp3")
+doorbell.loop = true;
 
-const controller = new AbortController();
-const { signal } = controller;
 
 puzzle0();
 
 function transition(i, j, callback, cleanUp) {    
     door.addEventListener('animationend', () => {
         console.log('animation ended')
-        door.src = `doors/door${i}.jpg`
-        doorBehind.src = `doors/door${j}.jpg`
+        door.src = `doors/door${i}.png`
+        doorBehind.src = `doors/door${j}.png`
         door.style.animation = "";
         doorBehind.style.opacity = 0;
         cleanUp();
@@ -27,6 +29,8 @@ function puzzle0() {
     door.src = "doors/door0.jpg"
     doorBehind.src = "doors/door1.jpg"
     instructions.textContent = "Behind this door is a prize."
+
+    knock.loop = false;
 
     let button = document.createElement("button");
     button.textContent = "knock"
@@ -49,11 +53,13 @@ function puzzle0() {
     sentence.style.alignItems = "center"
 
     button.onclick = () => {
+        knock.play()
         transition(1, 2, puzzle1, () => {
             content.removeChild(sentence)
         })
     }
 }
+
 function puzzle1() {
 
     let bounceCount = 0;
@@ -82,8 +88,8 @@ function puzzle1() {
     sentence.style.justifyContent = "space-between"
     sentence.style.alignItems = "center"
 
-    content.addEventListener('mousemove', (e) => {
-        let vHeight = content.getBoundingClientRect().height;
+    function handleMouseMove(e) {
+        let vHeight = content.getBoundingClientRect().height - 20;
         let vWidth = content.getBoundingClientRect().width;
         let buttonX = button.getBoundingClientRect().x
         let buttonY = button.getBoundingClientRect().y
@@ -108,31 +114,25 @@ function puzzle1() {
             instructions.textContent = "Is it that hard to knock?"
             button.style.opacity = 0;
 
-            controller.abort()
+            content.removeEventListener("mousemove", handleMouseMove)
 
             transition(2, 3, puzzle2, () => {
                 content.removeChild(sentence)
                 
             })
 
-            
-        //    // do animation
-        //     setTimeout(() => {
-        //         clean1(sentence);
-        //     }, 3500)
         }
-    }, { signal})
+    }
+    
+    content.addEventListener("mousemove", handleMouseMove);
 }
 
-// function clean1(sentence) {
-//     content.removeChild(sentence)
-    
-//     puzzle2();
-// }
 
 function puzzle2() {
     door.src = "doors/door2.jpg"
     instructions.textContent = "You need to knock LOUDER!"
+
+    knock.loop = true;
 
     let button = document.createElement("button");
     button.textContent = "knock"
@@ -141,24 +141,72 @@ function puzzle2() {
     let timeout;
 
     button.addEventListener("mousedown", () => {
+        knock.play();
         timeout = setTimeout(() => {
             console.log('you knocked')
-
             instructions.textContent = "Good job!"
             content.removeChild(button)
-            // do animation
+            knock.pause()
 
             setTimeout(() => {
-                clean2(button);
-            }, 3500)
-        }, 3000)
+                
+                transition(3, 1, puzzle3, () => {})
+            }, 2000)
+        }, 3500)
     })
 
     button.addEventListener("mouseup", () => {
         clearTimeout(timeout)
         console.log('you stopped knocking')
+        knock.pause();
     })
 }
 
-function clean2() {
+function puzzle3() { 
+    instructions.textContent = "Ring the bell!"
+
+    let bell = document.createElement("img");
+    bell.src = "doors/bell.svg"
+    bell.style.width = "70px"
+    bell.style.transformOrigin = "top center"
+    bell.style.marginTop = "24px"
+
+    content.appendChild(bell);
+
+    let timer = null;
+    let ringComplete = null;
+
+    function handleMouseMove(e) {
+        clearTimeout(timer);
+        doorbell.play()
+
+        if(ringComplete == null) {
+            bell.style.animation = "ring infinite 1s linear forwards"
+            ringComplete = setTimeout(() => {
+                console.log('rung for 3 seconds')
+                clearTimeout(timer)
+                instructions.textContent = "Nice ringing!"
+                bell.style.animation = ""
+                doorbell.pause()
+                content.removeEventListener('mousemove', handleMouseMove)
+                transition(0, 1, puzzle0, () => {
+                    content.removeChild(bell)
+                })
+            }, 3500)
+        }
+
+        timer = setTimeout(() => {
+            clearTimeout(ringComplete)
+            doorbell.pause()
+            bell.style.animation = ""
+            ringComplete = null;
+            console.log('stopped ringing')
+        }, 500)
+    }
+
+    content.addEventListener('mousemove', handleMouseMove);
+}
+
+function puzzle4() {
+    instructions.textContent = "puzzle 4"
 }

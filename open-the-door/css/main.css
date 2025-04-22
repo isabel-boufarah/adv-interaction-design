@@ -13,12 +13,16 @@ body {
 #door {
     height: 90vh;
     align-self: end;
+    position: absolute;
+    right: 99px;
 }
 
 #door-behind {
     height: 90vh;
     align-self: end;
     opacity: 0;
+    position: absolute;
+    right: 99px;
 }
 
 #mid-frame {
@@ -49,7 +53,7 @@ body {
 }
 
 button {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
     padding: 12px;
     margin: 12px;
@@ -68,4 +72,11 @@ button:active {
   background-color: #b9194e;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+@keyframes ring {
+    0% {trasnform: rotate(0deg);}
+    33% {transform: rotateZ(55deg);} 
+    66% {transform: rotateZ(-55deg);}
+    100% {transform: rotateZ(0deg);}
 }

@@ -150,7 +150,7 @@ function puzzle2() {
 
             setTimeout(() => {
                 
-                transition(3, 1, puzzle3, () => {})
+                transition(3, 0, puzzle3, () => {})
             }, 2000)
         }, 3500)
     })
@@ -192,7 +192,7 @@ function puzzle3() {
                 transition(0, 1, puzzle0, () => {
                     content.removeChild(bell)
                 })
-            }, 3500)
+            }, 4500)
         }
 
         timer = setTimeout(() => {

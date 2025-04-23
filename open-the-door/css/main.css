@@ -80,3 +80,40 @@ button:active {
     66% {transform: rotateZ(-55deg);}
     100% {transform: rotateZ(0deg);}
 }
+
+#volume {
+    width: 200px;
+    padding: 24px 12px;
+    background-image: url('../doors/frame.png');
+    background-size: cover;
+    font-family: "Roboto", sans-serif ;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 16px;
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    animation: twist linear 2s 3;
+}
+
+@keyframes twist {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(8deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    75% {
+        transform: rotateZ(-8deg);
+    }
+    
+    100% {
+        transform: rotateZ(0deg);
+    }
+}

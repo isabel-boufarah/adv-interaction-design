@@ -10,6 +10,10 @@ doorbell.loop = true;
 
 puzzle0();
 
+setTimeout(() => {
+    document.body.removeChild(document.getElementById("volume"))
+}, 2500)
+
 function transition(i, j, callback, cleanUp) {    
     door.addEventListener('animationend', () => {
         console.log('animation ended')
